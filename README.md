@@ -9,7 +9,7 @@
 
 ## 課題
 
-
+`problem.pdf` を読んで支持に従って，`solution.Rmd` を編集し，`solution.pdf` を作成せよ。
 
 ## 問い合わせ
 
