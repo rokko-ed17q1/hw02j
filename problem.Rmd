@@ -1,0 +1,132 @@
+---
+title: '課題 hw02j: 複素数の基本'
+author: '佐藤健治^[神戸大学 mail@kenjisato.jp]'
+date: '`r format(Sys.time(), "%Y/%m/%d")`'
+output:
+  bookdown::pdf_document2:
+    fig_caption: yes
+    includes:
+      in_header: 
+        - asset/latex/custom.sty
+        - asset/latex/luatexj.sty
+    keep_tex: no
+    latex_engine: lualatex
+    number_sections: yes
+    template: null
+    toc: no
+  bookdown::html_document2: default
+documentclass: scrartcl
+---
+
+# 概要
+
+## 目的 {-}
+
+1. R を電卓として使う
+2. 複素数の基本性質を学ぶ
+
+## 指示 {-}
+
+- 課題レポジトリをクローンし，新しいブランチを作る（例えば，`solution` ブランチ）
+- 節 \@ref(problems) の問題を解く
+- 解答を `solution.Rmd` に書き，knit する 
+- `solution.Rmd` と `solution.pdf` をコミットする 
+- Pull Request を送る
+ 
+# 練習問題
+
+$$
+\begin{aligned}
+z_1 &= 2 - i \\
+z_2 &= -1 + 2i.
+\end{aligned}
+$$
+
+1. 計算せよ：$z_1 + z_2$, $z_1 - z_2$, $z_1 z_2$, $z_1 / z_2$  $z_1^3$。
+   紙とペンで計算し，LaTeX 構文で結果を記すこと。
+2. R を使って計算結果を確認せよ。
+
+
+## 練習問題の回答 {-}
+
+1.
+$$
+\begin{aligned}
+z_1 + z_2 &= 1 + i,\\
+z_1 - z_2 &= 3 - 3i,\\
+z_1 z_2 &= 5i, \\
+z_1 / z_2 &= - \frac{4}{5} - \frac{3}{5} i \\
+z_1 ^ 3 &= 2 - 11i.
+\end{aligned}
+$$
+2. 代入  
+    ```{r}
+    z1 <- 2 - 1i
+    z2 <- -1 + 2i
+    ```  
+   加算   
+    ```{r}
+    z1 + z2
+    ```  
+   減算  
+    ```{r}
+    z1 - z2
+    ```  
+   乗算
+    ```{r}
+    z1 * z2
+    ```
+   除算
+    ```{r}
+    z1 / z2
+    ```
+   冪
+    ```{r}
+    z1 ^ 3
+    ```
+
+\pagebreak
+
+# 問題 {#problems}
+
+## (1) {-}
+
+$$
+\begin{aligned}
+z_1 &= 3 + i \\
+z_2 &= 1 - i.
+\end{aligned}
+$$
+
+1. $z_1^2 z_2^3$ を計算せよ。紙とペンで計算し，LaTeX 構文で結果を記すこと。
+2. R を使って計算結果を確認せよ。
+
+
+## (2) {-}
+
+コードを書くときには適切なスペースを挿入することが望ましい。例えば，代入は常に `x <- 1 + 2` 書くべきであって，`x<-1+2` と書かないようにしよう。後者も構文上正しいコードだが，スペースがあると読みやすくなるし，バグを減らすことが出来る。
+
+しかし，次のようなコードは認められていない。
+
+```{r, eval=FALSE}
+z <- 1 + 2 i
+```
+
+1. このコードを実行すると何が起こるか。推測せよ。
+2. コードを実行して，エラーメッセージを解釈せよ。
+3. 以上の結果，およびなぜそのようなことが起きたかをレポートせよ。
+
+
+## (3) {-}
+
+複素数の一般形は $a + bi$, $a, b \in \mathbb R$ である。 $b = 1$ のときには，$1$ と書かずに，$a + i$ と書き，$b = -1$ のときには $a - i$ と書くのが自然である。R では，そのような省略形は許されていない。
+
+```{r, eval=FALSE}
+z <- 1 + i
+w <- 1 - i 
+```
+
+1. このコードを実行すると何が起こるか。推測せよ。
+2. コードを実行して，エラーメッセージを解釈せよ。
+3. 以上の結果，およびなぜそのようなことが起きたかをレポートせよ。
+

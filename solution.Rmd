@@ -1,0 +1,92 @@
+---
+title: '課題 hw02j: 複素数の基本'
+author: '氏名^[所属]'
+date: '`r format(Sys.time(), "%Y/%m/%d")`'
+output:
+  bookdown::pdf_document2:
+    fig_caption: yes
+    includes:
+      in_header: 
+        - asset/latex/custom.sty
+        - asset/latex/luatexj.sty
+    keep_tex: no
+    latex_engine: lualatex
+    number_sections: yes
+    template: null
+    toc: no
+  bookdown::html_document2: default
+documentclass: scrartcl
+bibliography: 
+  - 'asset/bib/packages.bib'
+biblio-style: apalike
+link-citations: yes
+---
+
+# (1) {-}
+
+$$
+\begin{aligned}
+z_1 &= 3 + i \\
+z_2 &= 1 - i.
+\end{aligned}
+$$
+
+1. $z_1^2 z_2^3$ を計算せよ。紙とペンで計算し，LaTeX 構文で結果を記すこと。
+2. R を使って計算結果を確認せよ。
+
+## Solution {-}
+<!-- Write Solution to (1) Here -->
+
+
+
+
+
+
+
+<!-- End of Solution to (1) -->
+
+# (2) {-}
+
+コードを書くときには適切なスペースを挿入することが望ましい。例えば，代入は常に `x <- 1 + 2` 書くべきであって，`x<-1+2` と書かないようにしよう。後者も構文上正しいコードだが，スペースがあると読みやすくなるし，バグを減らすことが出来る。
+
+しかし，次のようなコードは認められていない。
+
+```{r, eval=FALSE}
+z <- 1 + 2 i
+```
+
+1. このコードを実行すると何が起こるか。推測せよ。
+2. コードを実行して，エラーメッセージを解釈せよ。
+3. 以上の結果，およびなぜそのようなことが起きたかをレポートせよ。
+
+## Solution {-}
+<!-- Write Solution to (2) Here -->
+
+
+
+
+<!-- End of Solution to (2) -->
+
+# (3) {-}
+
+複素数の一般形は $a + bi$, $a, b \in \mathbb R$ である。 $b = 1$ のときには，$1$ と書かずに，$a + i$ と書き，$b = -1$ のときには $a - i$ と書くのが自然である。R では，そのような省略形は許されていない。
+
+```{r, eval=FALSE}
+z <- 1 + i
+w <- 1 - i 
+```
+
+1. このコードを実行すると何が起こるか。推測せよ。
+2. コードを実行して，エラーメッセージを解釈せよ。
+3. 以上の結果，およびなぜそのようなことが起きたかをレポートせよ。
+
+## Solution {-}
+<!-- Write Solution to (3) Here -->
+
+
+
+
+
+
+<!-- End of Solution to (3) -->
+
